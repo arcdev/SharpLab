@@ -15,7 +15,6 @@ jobs:
     - name: Install Modules
       run: |
         $ErrorActionPreference = 'Stop'
-        Uninstall-AzureRM
         Install-Module -Name Az -RequiredVersion 2.6.0 -Force -AllowClobber
       shell: |
         pwsh -noninteractive -command "try {{ $ErrorActionPreference='Stop'; . '{0}' }} catch {{ Write-Error ""FAILED: $_""; throw; }} if ((Test-Path -LiteralPath variable:\LASTEXITCODE)) {{ exit $LASTEXITCODE }}"
