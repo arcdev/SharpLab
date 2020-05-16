@@ -15,8 +15,8 @@ jobs:
     - name: Install Modules
       run: |
         $ErrorActionPreference = 'Stop'
-        Uninstall-AzureRM
-        Install-Module -Name Az -RequiredVersion 2.6.0 -Force -AllowClobber
+        # Uninstall-AzureRM
+        # Install-Module -Name Az -RequiredVersion 2.6.0 -Force -AllowClobber
     - name: Update-All
       env:
         SHARPLAB_TELEMETRY_KEY: ${{secrets.AzureBranchTelemetryKey}}
